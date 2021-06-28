@@ -7,11 +7,8 @@ metadata:
   tags: ["NodeJS", "Express", "ubi8"]
   projectType: "nodejs"
   language: "nodejs"
-starterProjects:
-  - name: nodejs-starter
-    git:
-      remotes:
-        origin: "https://github.com/odo-devfiles/nodejs-ex.git"
+parent:
+  uri: https://github.com/devfile/registry/blob/main/stacks/nodejs/devfile.yaml
 components:
   - name: runtime
     container:
@@ -20,38 +17,5 @@ components:
       mountSources: true
       sourceMapping: /project
       endpoints:
-        - name: http-3000
-          targetPort: 3000
-commands:
-  - id: install
-    exec:
-      component: runtime
-      commandLine: npm install
-      workingDir: /project
-      group:
-        kind: build
-        isDefault: true
-  - id: run
-    exec:
-      component: runtime
-      commandLine: npm start
-      workingDir: /project
-      group:
-        kind: run
-        isDefault: true
-  - id: debug
-    exec:
-      component: runtime
-      commandLine: npm run debug
-      workingDir: /project
-      group:
-        kind: debug
-        isDefault: true
-  - id: test
-    exec:
-      component: runtime
-      commandLine: npm test
-      workingDir: /project
-      group:
-        kind: test
-        isDefault: true
+        - name: http-3001
+          targetPort: 3001
