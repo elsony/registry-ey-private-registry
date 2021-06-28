@@ -8,14 +8,5 @@ metadata:
   projectType: "nodejs"
   language: "nodejs"
 parent:
-  uri: https://github.com/devfile/registry/blob/main/stacks/nodejs/devfile.yaml
-components:
-  - name: runtime
-    container:
-      image: registry.access.redhat.com/ubi8/nodejs-14:latest
-      memoryLimit: 1024Mi
-      mountSources: true
-      sourceMapping: /project
-      endpoints:
-        - name: http-3001
-          targetPort: 3001
+  uri: https://raw.githubusercontent.com/devfile/registry/main/stacks/nodejs/devfile.yaml
+
